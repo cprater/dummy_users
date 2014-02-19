@@ -1,6 +1,10 @@
 <div class="container">
   <h2>Create an account with us!</h2>
 
+  <%if @invalid%>
+    <h2>Invalid username</h2>
+  <%end%>
+
   <form action="/create_account" method="POST">
     <label for="user_name">Username: </label>
     <input type="text" name="user[user_name]" id="user_name"><br><br>

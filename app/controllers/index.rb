@@ -3,14 +3,11 @@ get '/' do
 end
 
 get '/secret' do
-  #signout/secretpage
-  "booyah"
+  erb :secret
 end
 
 get '/create_account' do
-  #create page
   erb :create_account
-
 end
 
 
@@ -26,7 +23,14 @@ post '/login' do
 end
 
 post '/create_account' do
-  User.create(params[:user])
+  user = User.new(params[:user])
+  if user.check_validation
+    @invalid = true
+    erb :create_account
+  else
+    user.save
+    redirect '/secret'
+  end
 end
 
 
