@@ -17,8 +17,12 @@ end
 #POST=========================
 
 post '/login' do
-
-  redirect '/secret'
+  @test_info = User.find_by_user_name(params[:user][:user_name])
+  if @test_info.authenticate(params[:user][:password])
+    redirect '/secret'
+  else
+    redirect '/'
+  end
 end
 
 post '/create_account' do

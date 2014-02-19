@@ -15,6 +15,9 @@ gem 'activerecord'
 
 gem 'bcrypt-ruby', '3.0.0'
 
+gem 'pry'
+gem 'pry-nav'
+
 gem 'rake'
 
 gem 'shotgun'
