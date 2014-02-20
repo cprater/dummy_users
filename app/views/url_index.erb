@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Welcome to Jamica, mon!</h1>
+  <h2>Make a shortened url</h2>
+<%if @invalid%>
+    <h3>Your URL is invalid</h3>
+<%end%>
+
+  <form id="create_url" action="/urls" method="POST">
+    <label for="plain_url">Enter Url: </label>
+    <input type="text" name="original_url" id="plain_url" value="http://">
+    <input type="submit" value="Create Url">
+  </form>
+
+
+
+  <ul>
+    <%Url.all.each do |url|%>
+      <li><a href="<%=url.short_url%>">/<%=url.short_url%></a> Click Count: <%=url.click_count%> </li>
+    <%end%>
+  </ul>
+
+
+</div>

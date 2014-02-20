@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Welcome to Signupforstuff!</h1>
+
+  <%if @invalid%>
+    <h3>Your Password/Login is invalid</h3>
+  <%end%>
+
+  <form action='/login' method="POST">
+    <label for="user_name">Username: </label>
+    <input type="text" name="user[user_name]" id="user_name"><br><br>
+    <label for="password">Password:  </label>
+    <input type="password" name="user[password]" id="password">
+    <input type="submit" value="Login">
+  </form>
+
+<br><a href ="/create_account">Create and account!</a>
+</div>

@@ -1,5 +1,13 @@
 get '/' do
-  erb :index
+  erb :welcome
+end
+
+get '/urls' do
+  erb :url_index
+end
+
+get '/users' do
+  erb :user_index
 end
 
 get '/secret' do
@@ -23,7 +31,8 @@ post '/login' do
   if @test_info.authenticate(params[:user][:password])
     redirect '/secret'
   else
-    redirect '/'
+    @invalid = true
+    erb :user_index
   end
 end
 
