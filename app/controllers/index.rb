@@ -27,12 +27,17 @@ end
 #POST=========================
 
 post '/login' do
-  @test_info = User.find_by_user_name(params[:user][:user_name])
-  if @test_info.authenticate(params[:user][:password])
-    redirect '/secret'
-  else
+  @test_info = User.find_by_user_name(params[:user][:user_name])  
+  if @test_info == nil
     @invalid = true
     erb :user_index
+  else
+    if @test_info.authenticate(params[:user][:password])
+      redirect '/secret'
+    else
+      @invalid = true
+      erb :user_index
+    end
   end
 end
 
@@ -50,11 +55,9 @@ end
 post '/urls' do
   @new_url = Url.new(original_url: params[:original_url])
   if @new_url.check_validation
-    puts "invalid"
     @invalid = true
     erb :index
   else
-    "valid"
     @new_url.save
     erb :display_short
   end

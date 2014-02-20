@@ -3,6 +3,7 @@ class Url < ActiveRecord::Base
   validates :original_url, presence: true
   validates_format_of :original_url, :with => /\Ahttp:\/\/.+\.\w{3}\z/i
   before_save :generate_url
+  belongs_to :user
 
   def check_validation
     a = self.invalid?
