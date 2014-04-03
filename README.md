@@ -4,6 +4,7 @@ url_shortener
 
 ###Setup
 -Clone down this repo run ```rake db:create``` and  ```rake db:migrate```
+
 -Run ```shotgun``` and visit localhost:9393
 
 
