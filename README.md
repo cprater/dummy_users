@@ -3,8 +3,8 @@ url_shortener
 ##A url shortener created as a project for Dev Bootcamp
 
 ###Setup
--Clone down this repo run '''rake db:create''' and  '''rake db:migrate'''
--Run '''shotgun''' and visit localhost:9393
+-Clone down this repo run ```rake db:create``` and  ```rake db:migrate```
+-Run ```shotgun``` and visit localhost:9393
 
 
 ###To use the shortener
