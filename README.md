@@ -10,4 +10,5 @@ url_shortener
 
 ###To use the shortener
 -Type in a url you wish to shorten and it will return a random shortened url
+
 -The home page lists the urls and the times they have been clicked
